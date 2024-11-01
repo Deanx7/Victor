@@ -1,0 +1,44 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}
+
+//InterStellar,10, ficção científica//
+//No Limite do Amanhã, 14, ficção científica//
+//Invocação do Mal, 14, terror//
+//Carros, livre, infantil, comédia//
+//Supernatural, 16, drama//
+//Constantine, 14, terror,fantasia//
+//Planeta dos Macacos, 14, ação, ficção científica//
+//Resident Evil, 18, terror//
+//Riddick, 16, ficção científica//
+//Fique Rico ou Morra Tentando,16, musical,ação//
+
+let campoldade; 
+
+function setup() {
+  createCanvas(400,400);
+  campoldade=createInput("4");
+}
+
+function draw() {
+  background(220);
+  let idade=campoldade.value();
+  let recomendação=geraRecomendação(idade);
+  text(recomendação, width/2, height/2);
+}
+
+function geraRecomendação(idade) {
+  if(idade>=10) {
+    if(idade>=14) {
+      return "Invocação do Mal";
+    } else {
+      return "InterStellar";
+    }
+  } else {
+    return "Carros";
+  }
+}
