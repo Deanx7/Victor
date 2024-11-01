@@ -1,0 +1,71 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}let campoIdade;
+
+let campoFiccaoCientifica;
+
+function setup() {
+
+    createCanvas(400, 400);
+
+    campoIdade = createInput("15");
+
+    campoFiccaoCientifica = createCheckbox("Gosta de Ficção Científica ?");
+
+}
+
+function draw() {
+
+    background(220);
+
+    let idade = campoIdade.value();
+
+    let gostaDeFiccaoCientifica = campoFiccaoCientifica.checked();
+
+    let recomendacao = geraRecomendacao(idade, gostaDeFiccaoCientifica);
+
+    text(recomendacao, width / 2, height / 2);
+
+}
+
+function geraRecomendacao(idade, gostaDeFiccaoCientifica) {
+
+    if(idade >= 10) {
+
+        if(idade >= 14) {
+
+            return "Supernatural";
+
+        } else {
+
+            if(gostaDeFiccaoCientifica){
+
+                return "InterStellar";
+
+            } else {
+
+                return "No Limite do Amanhã";
+
+            }
+
+        }
+
+    } else {
+
+        if(gostaDeFiccaoCientifica) {
+
+            return "Homem Aranha";
+
+        } else {
+
+            return "Carros";
+
+        }
+
+    }
+
+}
